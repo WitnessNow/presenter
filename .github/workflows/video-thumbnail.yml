@@ -11,20 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout the Backgrounds branch
       - name: Checkout Backgrounds
         uses: actions/checkout@v3
         with:
           ref: Backgrounds
           fetch-depth: 0
 
-      - name: Check ffmpeg
-        run: ffmpeg -version
+      # 2️⃣ Install ffmpeg fast (static binary)
+      - name: Install ffmpeg fast
+        run: |
+          mkdir -p $HOME/bin
+          curl -L -o $HOME/bin/ffmpeg.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-i686-static.tar.xz
+          tar -xf $HOME/bin/ffmpeg.tar.xz -C $HOME/bin --strip-components=1
+          export PATH=$HOME/bin:$PATH
+          ffmpeg -version
 
+      # 3️⃣ Debug: list videos
       - name: List video files
         run: |
           echo "Current directory: $(pwd)"
           ls -l Backgrounds/Videos || echo "No videos found"
 
+      # 4️⃣ Generate thumbnails
       - name: Generate thumbnails
         run: |
           mkdir -p Backgrounds/VideoThumbnails
@@ -35,7 +44,7 @@ jobs:
             filename=$(basename "$f" .mp4)
             thumb_file="Backgrounds/VideoThumbnails/${filename}-thumb.jpg"
             if [ ! -f "$thumb_file" ]; then
-              ffmpeg -i "$f" -ss 00:00:02 -vframes 1 "$thumb_file"
+              $HOME/bin/ffmpeg -i "$f" -ss 00:00:02 -vframes 1 "$thumb_file"
               ((count++))
             else
               echo "Thumbnail already exists: $thumb_file"
@@ -43,6 +52,7 @@ jobs:
           done
           echo "Total new thumbnails created: $count"
 
+      # 5️⃣ Commit only if new thumbnails were created
       - name: Commit new thumbnails
         run: |
           git config --global user.name "github-actions[bot]"
