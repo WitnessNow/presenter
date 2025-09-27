@@ -3,32 +3,29 @@ name: Generate Video Thumbnails
 on:
   push:
     branches:
-      - Backgrounds   # triggers on any commit to Backgrounds
-  workflow_dispatch:   # allows manual trigger
+      - Backgrounds
+  workflow_dispatch:
 
 jobs:
   create-thumbnails:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the Backgrounds branch
-      - name: Checkout repo
+      - name: Checkout Backgrounds
         uses: actions/checkout@v3
         with:
           ref: Backgrounds
+          fetch-depth: 0
 
-      # 2️⃣ Install ffmpeg
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      # 3️⃣ Debug: show working directory and list videos
       - name: List video files for debugging
         run: |
           echo "Current directory: $(pwd)"
           echo "Contents of Backgrounds/Videos:"
           ls -l Backgrounds/Videos || echo "No videos found"
 
-      # 4️⃣ Generate thumbnails safely
       - name: Generate thumbnails
         run: |
           mkdir -p Backgrounds/VideoThumbnails
@@ -47,7 +44,6 @@ jobs:
           done
           echo "Total new thumbnails created: $count"
 
-      # 5️⃣ Commit only if new thumbnails were created
       - name: Commit new thumbnails
         run: |
           git config --global user.name "github-actions[bot]"
