@@ -17,13 +17,12 @@ jobs:
           ref: Backgrounds
           fetch-depth: 0
 
-      - name: Install ffmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Check ffmpeg
+        run: ffmpeg -version
 
-      - name: List video files for debugging
+      - name: List video files
         run: |
           echo "Current directory: $(pwd)"
-          echo "Contents of Backgrounds/Videos:"
           ls -l Backgrounds/Videos || echo "No videos found"
 
       - name: Generate thumbnails
