@@ -1,0 +1,37 @@
+name: Generate Video Thumbnails
+
+on:
+  push:
+    branches:
+      - Backgrounds
+    paths:
+      - 'Backgrounds/Videos/*.mp4'
+  workflow_dispatch:   # allows manual trigger
+
+jobs:
+  create-thumbnails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: Backgrounds   # important: checkout Backgrounds branch to access videos
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Generate thumbnails
+        run: |
+          mkdir -p Backgrounds/VideoThumbnails
+          for f in Backgrounds/Videos/*.mp4; do
+            filename=$(basename "$f" .mp4)
+            ffmpeg -i "$f" -ss 00:00:02 -vframes 1 "Backgrounds/VideoThumbnails/${filename}-thumb.jpg"
+          done
+
+      - name: Commit thumbnails
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add Backgrounds/VideoThumbnails/
+          git commit -m "Add video thumbnails"
+          git push origin Backgrounds
