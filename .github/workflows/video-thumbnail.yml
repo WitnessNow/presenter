@@ -3,10 +3,8 @@ name: Generate Video Thumbnails
 on:
   push:
     branches:
-      - Backgrounds
-    paths:
-      - 'Backgrounds/Videos/*.mp4'
-  workflow_dispatch:   # Manual trigger
+      - Backgrounds   # triggers on any commit to Backgrounds
+  workflow_dispatch:   # allows manual trigger
 
 jobs:
   create-thumbnails:
@@ -23,9 +21,12 @@ jobs:
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      # 3️⃣ List video files for debugging
-      - name: List video files
-        run: ls -l Backgrounds/Videos/
+      # 3️⃣ Debug: show working directory and list videos
+      - name: List video files for debugging
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Contents of Backgrounds/Videos:"
+          ls -l Backgrounds/Videos || echo "No videos found"
 
       # 4️⃣ Generate thumbnails safely
       - name: Generate thumbnails
