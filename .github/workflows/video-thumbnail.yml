@@ -23,10 +23,13 @@ jobs:
       - name: Generate thumbnails
         run: |
           mkdir -p Backgrounds/VideoThumbnails
+          shopt -s nullglob
           for f in Backgrounds/Videos/*.mp4; do
+            echo "Processing $f"
             filename=$(basename "$f" .mp4)
             ffmpeg -i "$f" -ss 00:00:02 -vframes 1 "Backgrounds/VideoThumbnails/${filename}-thumb.jpg"
           done
+
 
       - name: Commit thumbnails
         run: |
