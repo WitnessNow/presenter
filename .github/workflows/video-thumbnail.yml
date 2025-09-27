@@ -6,6 +6,7 @@ on:
       - Backgrounds
     paths:
       - 'Backgrounds/Videos/*.mp4'
+  workflow_dispatch:   # 👈 allows manual trigger from GitHub Actions tab
 
 jobs:
   create-thumbnails:
