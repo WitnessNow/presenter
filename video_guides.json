@@ -1,26 +1,32 @@
 {
-  "id": "guide_sermon_notes_deck",
-  "title": "How to Create Sermon Slides with Scripture",
-  "titleTa": "பிரசங்க ஸ்லைடுகளை வசனங்களுடன் உருவாக்குவது எப்படி?",
-  "description": "Learn how to format sermon points and display Bible verses live on screen.",
-  "descriptionTa": "பிரசங்கக் குறிப்புகள் மற்றும் வசனங்களை எளிதாகத் திரையில் காட்டும் முறை.",
-  "category": "ai",
-  "videoUrl": "https://www.youtube.com/watch?v=pFQTxky9wmM",
-  "youtubeId": "pFQTxky9wmM",
-  "thumbnailUrl": "",
-  "duration": "2:30",
-  "tag": "Step-by-Step",
-  "tagTa": "படிப்படியாக",
-  "targetRoute": "slide_generator",
-  "isFeatured": true,
-  "keySteps": [
-    "Open the Notes tab and tap '+ Create Slides'.",
-    "Paste your sermon points and select auto-bullet styling.",
-    "Tap 'Insert Slides' to start presenting immediately."
-  ],
-  "keyStepsTa": [
-    "குறிப்புகள் பகுதிக்குச் சென்று '+ Create Slides' என்பதை அழுத்தவும்.",
-    "உங்கள் பிரசங்கக் குறிப்புகளைப் பெட்டியில் ஒட்டவும்.",
-    "'Insert Slides' என்பதைத் தட்டினால் ஸ்லைடுகள் தயாராகிவிடும்."
+  "version": 1,
+  "lastUpdated": "2026-08-30",
+  "guides": [
+    {
+      "id": "guide_sermon_notes_deck",
+      "title": "How to Create Sermon Slides with Scripture",
+      "titleTa": "பிரசங்க ஸ்லைடுகளை வசனங்களுடன் உருவாக்குவது எப்படி?",
+      "description": "Learn how to format sermon points and display Bible verses live on screen.",
+      "descriptionTa": "பிரசங்கக் குறிப்புகள் மற்றும் வசனங்களை எளிதாகத் திரையில் காட்டும் முறை.",
+      "category": "ai",
+      "videoUrl": "https://www.youtube.com/watch?v=pFQTxky9wmM",
+      "youtubeId": "pFQTxky9wmM",
+      "thumbnailUrl": "",
+      "duration": "2:30",
+      "tag": "Step-by-Step",
+      "tagTa": "படிப்படியாக",
+      "targetRoute": "slide_generator",
+      "isFeatured": true,
+      "keySteps": [
+        "Open the Notes tab and tap '+ Create Slides'.",
+        "Paste your sermon points and select auto-bullet styling.",
+        "Tap 'Insert Slides' to start presenting immediately."
+      ],
+      "keyStepsTa": [
+        "குறிப்புகள் பகுதிக்குச் சென்று '+ Create Slides' என்பதை அழுத்தவும்.",
+        "உங்கள் பிரசங்கக் குறிப்புகளைப் பெட்டியில் ஒட்டவும்.",
+        "'Insert Slides' என்பதைத் தட்டினால் ஸ்லைடுகள் தயாராகிவிடும்."
+      ]
+    }
   ]
 }
