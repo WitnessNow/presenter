@@ -9,23 +9,45 @@
       "description": "Learn how to format sermon points and display Bible verses live on screen.",
       "descriptionTa": "பிரசங்கக் குறிப்புகள் மற்றும் வசனங்களை எளிதாகத் திரையில் காட்டும் முறை.",
       "category": "ai",
-      "videoUrl": "https://www.youtube.com/watch?v=2Gg6Seob5Mg",
-      "youtubeId": "2Gg6Seob5Mg",
+      "videoUrl": "https://www.youtube.com/watch?v=YOUR_YOUTUBE_ID",
+      "youtubeId": "YOUR_YOUTUBE_ID",
       "thumbnailUrl": "",
       "duration": "2:30",
       "tag": "Step-by-Step",
       "tagTa": "படிப்படியாக",
-      "targetRoute": "slide_generator",
-      "isFeatured": true,
       "keySteps": [
-        "Open the Notes tab and tap '+ Create Slides'.",
-        "Paste your sermon points and select auto-bullet styling.",
-        "Tap 'Insert Slides' to start presenting immediately."
+        "Open Notes tab and tap '+ Create Slides'.",
+        "Paste your text and select layout.",
+        "Tap 'Insert Slides' to start presenting."
       ],
       "keyStepsTa": [
-        "குறிப்புகள் பகுதிக்குச் சென்று '+ Create Slides' என்பதை அழுத்தவும்.",
-        "உங்கள் பிரசங்கக் குறிப்புகளைப் பெட்டியில் ஒட்டவும்.",
-        "'Insert Slides' என்பதைத் தட்டினால் ஸ்லைடுகள் தயாராகிவிடும்."
+        "குறிப்புகள் பகுதிக்குச் சென்று '+ Create Slides' அழுத்தவும்.",
+        "உரையை ஒட்டி அமைப்பைத் தேர்வு செய்யவும்.",
+        "'Insert Slides' அழுத்தித் திரையில் காட்டவும்."
+      ]
+    },
+    {
+      "id": "guide_connect_tv_projector",
+      "title": "Connecting External Displays & Projectors",
+      "titleTa": "டிவி மற்றும் புரொஜெக்டரில் திரையிடுவது எப்படி?",
+      "description": "Connect via HDMI or AirPlay and cast lyrics with secondary display mode.",
+      "descriptionTa": "HDMI அல்லது AirPlay மூலம் பெரிய திரையில் பாடல்களைக் காட்டும் முறை.",
+      "category": "projection",
+      "videoUrl": "https://www.youtube.com/watch?v=YOUR_YOUTUBE_ID",
+      "youtubeId": "YOUR_YOUTUBE_ID",
+      "thumbnailUrl": "",
+      "duration": "1:45",
+      "tag": "Quick Tip",
+      "tagTa": "விரைவுக் குறிப்பு",
+      "keySteps": [
+        "Connect your HDMI adapter or screen mirroring.",
+        "Turn on Presentation Display in Settings.",
+        "Select any song or verse to cast live."
+      ],
+      "keyStepsTa": [
+        "HDMI அல்லது Screen Mirroring மூலம் இணைக்கவும்.",
+        "அமைப்புகளில் Presentation Display ஆன் செய்யவும்.",
+        "பாடலைத் தொட்டுப் பெரிய திரையில் காட்டவும்."
       ]
     }
   ]
